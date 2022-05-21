@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import DetailedOrder from './modules/detailedOrder/index'
+import Orders from './modules/orders/index'
+import { Routes, Route } from 'react-router-dom'
+import { Layout, Image } from 'antd'
+import SideMenu from './component/SideMenu'
+import RestaurantMenu from './modules/RestaurantMenu'
+import CreateMenuItem from './modules/CreateMenuItem'
+import OrderHistory from './modules/OrderHistory'
+import Settings from './modules/Settings'
+
+const { Sider, Content, Footer } = Layout
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Layout>
+      <Sider style={{ height: '100vh', backgroundColor: 'grey' }}>
+        <img
+          src="https://seeklogo.com/images/U/uber-eats-logo-CA3BA2098B-seeklogo.com.png"
+          alt="uberImage"
+          style={{ maxWidth: '200px' }}
+        ></img>
+        <SideMenu></SideMenu>
+      </Sider>
+      <Layout>
+        <Content style={{ background: 'red' }}>
+          <Routes>
+            <Route path="" element={<Orders />} />
+            <Route path="order/:id" element={<DetailedOrder />} />
+            <Route path="menu" element={<RestaurantMenu />} />
+            <Route path="menu/create" element={<CreateMenuItem />} />
+            <Route path="order-history" element={<OrderHistory />} />
+            <Route path="settings" element={<Settings />} />
+          </Routes>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>
+          Uber Eats Dashboard @2022
+        </Footer>
+      </Layout>
+    </Layout>
+  )
 }
 
-export default App;
+export default App
