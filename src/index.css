@@ -4,8 +4,8 @@
 }
 
 .ant-btn-danger {
-  background-color: rgb(231, 7, 7) !important;
-  border-color: rgb(231, 7, 7) !important;
+  background-color: rgb(138, 137, 137) !important;
+  border-color: rgb(138, 137, 137) !important;
 }
 /* to change the color of the number at bottom on order page */
 .ant-pagination-item-active {
@@ -18,7 +18,7 @@
 }
 
 .ant-menu-item-hover {
-  color: rgb(255, 0, 3) !important;
+  color: rgb(200, 200, 200) !important;
 }
 
 .ant-menu-item-selected {

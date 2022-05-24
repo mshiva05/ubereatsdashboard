@@ -23,7 +23,7 @@ function App() {
         <SideMenu></SideMenu>
       </Sider>
       <Layout>
-        <Content style={{ background: 'red' }}>
+        <Content style={{ background: 'lightgray' }}>
           <Routes>
             <Route path="" element={<Orders />} />
             <Route path="order/:id" element={<DetailedOrder />} />
